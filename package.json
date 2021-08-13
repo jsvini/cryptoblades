@@ -32,9 +32,12 @@
     "truffle-contract-size": "^2.0.1",
     "truffle-export-abi": "^1.0.1",
     "truffle-plugin-verify": "^0.5.7",
-    "yargs": "^17.0.1"
+    "yargs": "^17.0.1",
+    "sass": "^1.32.6",
+    "sass-loader": "7.3.1"
   },
   "scripts": {
+    "build:cloudflare": "npm install && npm run build && cd frontend && cp .env.mainnet .env && npm install && npm run build",
     "postinstall": "npm run contract:prepare && lerna exec -- npm install",
     "lint": "lerna exec -- npm run lint",
     "build:frontend": "cd frontend && npm run build",
